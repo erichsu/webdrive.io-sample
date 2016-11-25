@@ -1,15 +1,20 @@
 {
-    "name": "checkin-bot",
+    "name": "webdrive.io-sample",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
     "scripts": {
         "start": "node index.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "checkin": "node checkin.js",
+        "checkout": "node checkout.js"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "express": "^4.14.0",
+        "socket.io": "^1.6.0",
+        "socket.io-redis": "^1.1.1",
         "webdriverio": "^4.4.0"
     }
 }
