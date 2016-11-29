@@ -29,7 +29,7 @@ var task = function() {
         // .click('#check_out')
         .saveScreenshot('./checkin-step2.png')
         .end();
-    webhook.send('Hello there out', function(err, res) {
+    webhook.send('Hello there in', function(err, res) {
         if (err) {
             console.log('Error:', err);
         } else {
@@ -51,4 +51,4 @@ var genTask = function() {
     schedule.scheduleJob(nextDate, task);
 
 };
-var j = schedule.scheduleJob('0 9 * * *', genTask);
+var j = schedule.scheduleJob('1 9 * * 1-5', genTask);

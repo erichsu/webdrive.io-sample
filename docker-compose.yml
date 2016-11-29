@@ -2,6 +2,10 @@ version: '2'
 services:
   selenium:
     image: selenium/standalone-chrome-debug
+    environment:
+     - no_proxy=localhost
+     - HUB_ENV_no_proxy=localhost 
     ports:
      - "4444:4444"
      - "55900:5900"
+     
