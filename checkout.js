@@ -13,15 +13,15 @@ var webhook = new IncomingWebhook(url);
 
 
 var task = function() {
-    console.log('Starting...');
+    console.log('Starting checkout...');
     webdriverio
         .remote(options)
         .init()
         .url('http://tpehrweb.tutorabc.com/TIMG_inout/form/index.html')
-        .getTitle().then(function(title) {
-            console.log('Title was: ' + title);
-            //this.waitForSelector('input[name="employeeid"]');
+        .getUrl().then(function(url) {
+          console.log('Visit url', url);
         })
+        .waitForExist('input[name="employeeid"]')
         .setValue('input[name="employeeid"]', '104012101421')
         .click('#btn_cardNumber')
         .saveScreenshot('./checkout-step1.png')
@@ -52,4 +52,3 @@ var genTask = function() {
 
 };
 var j = schedule.scheduleJob('1 19 * * 1-5', genTask);
-genTask();
