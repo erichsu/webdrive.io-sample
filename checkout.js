@@ -41,7 +41,7 @@ var task = function() {
 var genTask = function() {
 
     var nextDate = new Date();
-    var begin = netData.getMinutes();
+    var begin = nextDate.getMinutes();
     var end = 59;
     // var second = Math.floor((Math.random() * Math.abs(end - begin) + 1) + begin);
     // nextDate.setSeconds(second);
@@ -52,3 +52,4 @@ var genTask = function() {
 
 };
 var j = schedule.scheduleJob('1 19 * * 1-5', genTask);
+genTask();
