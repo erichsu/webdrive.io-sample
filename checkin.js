@@ -50,4 +50,4 @@ var genTask = function() {
     schedule.scheduleJob(nextDate, task);
 
 };
-var j = schedule.scheduleJob('1 9 * * 1-5', genTask);
+var j = schedule.scheduleJob('1 8 * * 1-5', genTask);
